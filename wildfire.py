@@ -1,73 +1,82 @@
 wildfire = {
-        'intro': "You've been notified of a wildfire approaching in your area You have 5 minutes to evacuate. What do you do?",
-        'at home': {'Stay put': {}, 
-                    'Get closer to water': {},
-                    'Leave and follow the evacution of the neighborhood': {}, 
-                    'go into the forest': {}},
+        'Name': 'wildfire',
+        'At home': {'message': "You've been notified of a wildfire approaching in your area You have 5 minutes to evacuate. What do you do?"},
         
-        'on the road': {'Turn around back to the other town': {},
-                        'head down to find any one needing a ride': {},
-                        'leave car and start running away from the fire': {},
-                        'drive to the nearest town': {}},
-
-        'in a car': {'drive away from the fire': {},
-                     'drive to the nearest town': {},
-                     'Drive to the nearest body of water': {}},
-
-
-        'middle of the forest': {'Follow large Wild life': {},
-                                 'look for water source or body of water': {},
-                                 'Start walking away and look for emergency': {},
-                                 'climb a tree and wait for help': {}},
-                                 
-        "middle of a lake": {'Pick up anyone by the beaches': {},
-                             'stay in the middle of the lake': {},
-                             'Use a sigmal flare to call for help': {},
-                             'start swimming to the nearest shore': {}},
-                             
-        'by a river': {'keep following the river down back to town': {},
-                       'knee deep walking to the town': {}},
-
-        'cliff Side': {'Jump to the bottom': {},
-                       'keep follon within edge until you find a lower area': {},
-                       'start walking towards the forest.': {},
-                       'climb down': {}},
-                       
-        'by train tracks': {'follow your way back to home' : {},
-                            'follow the way back to town': {},
-                            'go in to the forest': {}},
-                            
-        'in a cornfield': {'get out to the road and start funning back': {},
-                           'find a shovel and start digging a line': {},
-                           'stay in the field and wait for help': {}},
         
-        'made it to the town': {'find a shelter safe area': {},
-                                'find a hotel': {},
-                                'find a hospital': {},
-                                'find a police station': {}},
-        
-        'made it to  safety are': {'find the nearest hospital': {},
-                                   'find the nearest police station': {},
-                                   'find the nearest shelter': {},
-                                   'find the nearest hotel': {}},
-                                   
-        'found a hospital': {'begin to help the injured': {},
-                             'find a doctor': {},'find a nurse': {},
-                             'find a police officer': {}},
-        
-        'foun a police station': {'find a police officer': {},
-                                  'find a police car': {},
-                                  'find a police dog': {},
-                                  'find a police gun': {}},
+        'Stay put': {'message': 'The house is burning with you in it. You die'},
 
-        'found a shelter': {'find a bed': {},
-                            'find a blanket': {},
-                            'find a pillow': {},
-                            'find a shower': {}},
 
-        'found a hotel': {'find a bed': {},
-                          'find a blanket': {},
-                          'find a pillow': {},
-                          'find a shower': {}},
+        'Get close to water': {'message': 'You get close to a body of water and get on a boat to middle of a lake.'},
+        'Pick people up in boat': {'message': "You pick up anyone by the beaches on your boat, and your boat gets heavy and sinks. You die."},
+        'Stay in the lake': {'message': "You stay in the middle of the lake until the fire dies down. You are safe."},
+
+
+
+        'Go into forest': {"You go into the forest and get to the middle of the forest."},
+        'Follow wildlife': {'message': "You follow the large wild life and get chased by a bear. You die."},
+        'Climb a tree': {'message': "You climb a tree and wait for help. The fire overtakes you. You die."},
+        'Look for emergency personnel': {'message': "You start walking away and look for emergency personnel. You get lost and overtaken by the fire. You die."},
+
+
+        'In in a car': {'message': "You get in a car on and start driving down the road"},
+        'Follow the evacuation': {'message': "You leave and follow the evacution of the neighborhood"},
+        'Drive to nearest town': {'message': "You leave and drive to the nearest town. You make it to the town and are safe."},
+        'Drive to nearest body of water': {'message': "You arrive at a body of water and get on a boat to middle of a lake."},
+        'Find people to pickup': {'message': "You head down to find any one needing a ride"},
+        'Leave car and run away': {'message': "You leave the car and start running away from the fire, but it overtakes you."},
+        #start a diagram for the other senario or hold for a bit? Ok  <-yes ill be in the flood since it will mostly the same as the wildfire    Sweet sound good
+        #really gotta get this one done first so the other guys and do something besides watch videos on youtube xD
+        #Actually, I'll try and wrap this one up if you want to start the next scenario ^^
+
+        # 'end conditions': {'You die',
+        #                    'You got away safely',
+        #                    'You got to the hospital',
+        #                    'You got to the police station and stayed and helped',
+        #                    'made it to the town',
+        #                    'found a shelter safe area'}
+        #                    # Maybe we just put these in the 'message' keys ... <yes that sounds like a better idea> sweet
 
 }
+
+
+#1
+wildfire['At home'['Get in a car']] = wildfire['Get in a car']
+  #2
+wildfire['Get in a car'['Follow the evacuation']] = wildfire['Follow the evacuation']
+    #3
+wildfire['Follow the evacuation'['Leave car and run away']] = wildfire['Leave car and run away']
+    #3
+wildfire['Follow the evacuation'['Find people to pickup']] = wildfire['Find people to pickup']
+  #2
+wildfire['Get in a car'['Drive to nearest town']] = wildfire['Drive to nearest town']
+  #2
+wildfire['Get in a car'['Drive to nearest body of water']] = wildfire['Drive to nearest body of water']
+    #3
+wildfire['Drive to nearest body of water'['Pick people up in boat']] = wildfire['Pick people up in boat']
+    #3
+wildfire['Drive to nearest body of water'['Stay in the lake']] = wildfire['Stay in the lake']
+
+
+#1
+wildfire['At home'['Stay put']] = wildfire['Stay put']
+
+
+#1
+wildfire['At home'['Go into forest']] = wildfire['Go into forest']
+  #2
+wildfire['Go into forest'['Follow wildlife']] = wildfire['Follow wildlife']
+  #2
+wildfire['Go into forest'['Climb a tree']] = wildfire['Climb a tree']
+  #2
+wildfire['Go into forest'['Look for emergency personnel']] = wildfire['Look for emergency personnel']
+
+
+#1
+wildfire['At home'['Get close to water']] = wildfire['Get close to water']
+  #2
+wildfire['Get close to water'['Pick people up in boat']] = wildfire['Pick people up in boat']
+  #2
+wildfire['Get close to water'['Stay in the lake']] = wildfire['Stay in the lake']
+
+def Wildfire():
+  return wildfire
