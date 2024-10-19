@@ -1,5 +1,5 @@
-# Freak disaters
-Freak disaters is a gamified disaster training that has been the purpose of giving people opportunities to see what would happen if they're in a real world disaster scenario. Such as hurricanes, tornadoes, earthquakes, floods, and wildfires.
+# Freak disasters
+Freak disasters is a gamified disaster training that has been the purpose of giving people opportunities to see what would happen if they're in a real world disaster scenario. Such as hurricanes, tornadoes, earthquakes, floods, and wildfires.
 
 ## Table of Contents
 - [Overview](#overview)
