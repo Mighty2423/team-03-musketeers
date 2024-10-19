@@ -2,7 +2,7 @@ import asyncio
 import serial_asyncio
 
 # Setup
-serial_port = 'COM7'
+serial_port = 'COM14'
 baud_rate = 115200
 num_choices = 0
 
