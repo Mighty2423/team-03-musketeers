@@ -23,7 +23,7 @@ wildfire = {
         'Drive to nearest town': {'message': "You leave and drive to the nearest town. You make it to the town and are safe."},
         'Drive to nearest body of water': {'message': "You arrive at a body of water and get on a boat to middle of a lake."},
         'Find people to pickup': {'message': "You head down to find any one needing a ride"},
-        'Leave car and run away': {'message': "You leave the car and start running away from the fire, but it overtakes you."},
+        'Leave car and run away': {'message': "You leave the car and start running away from the fire, but it overtakes you. You die."},
 
 }
 

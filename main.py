@@ -1,8 +1,8 @@
 import serial
-# import earthquake
-# import floods
-# import hurricane
-# import tornado
+import earthquake
+import floods
+import hurricane
+import tornado
 import wildfire
 
 # Utility function for viewing data
@@ -13,6 +13,16 @@ def print_k_v(dictionary):
       print(v, end="\n\n")
     else:
       print_k_v(v)
+
+# Needs work/to be integrated in place of input(prompt)
+def poll(serial_port, integer, prompt):
+  print(prompt)
+
+  serial_port.write(integer)
+
+  choice = int(serial_port.read())
+
+  return choice
 
 
 def get_menu_list(menu):
@@ -40,44 +50,63 @@ def get_choice(menu):
 
     try:
       choice = int(choice)
-      if choice < 0 or choice > len(menu_list):
+      if choice < 0 or choice > len(menu_list)-1:
         raise Exception()
-      else:
+      else: # If successful!
         valid = True
         return menu[menu_list[choice]]
     except Exception:
-      print("Invalid choice")
-      prompt = "Please choose a valid option: "
+      print("Invalid choice", '\n')
+      prompt = "Please choose a valid option (e.g. 0 or 1): "
 
+def main_menu(disasters):
+  prompt = "Choose your adventure: "
+
+  valid = False
+  while(not valid):
+    for i in range(len(disasters)):
+        print(f"{i}: {disasters[i].__name__.capitalize()}")
+    print(f"{len(disasters)}: Quit")
+
+    choice = input(prompt)
+    print("\n", f"You chose {choice}", sep='')
+
+    try:
+      choice = int(choice)
+      if choice < 0 or choice > len(disasters):
+        raise Exception("Out of range")
+      else: # If successful!
+        valid = True
+        return choice
+    except Exception:
+      print("Invalid choice")
+      prompt = "Please choose a valid option (e.g. 0 or 1): "
 
 
 def main():
-  disasters = [wildfire]
-
-  # choice = disasters[4].get()
-  # print_k_v(choice)
-  # print(choice)
-
-
+  # disasters = [earthquake, floods, hurricane, tornado, wildfire]
+  disasters = [earthquake, floods,hurricane, tornado, wildfire]
 
   quit = False
   while(not quit):
+    play = False
     
-    # for i in range(len(disasters)):
-    #   print(f"{i}: {disasters[i].__name__}")
+    choice = main_menu(disasters)
 
-    choice = wildfire.get()["At home"]
+    if choice == len(disasters):
+      print('Thanks for playing! Stay safe!')
+      quit = True
+    else:
+      play = True
+      current_menu = disasters[choice].get()['At home']
 
-    print(get_choice(choice))
-
-    play = True
     while(play):
-      ...
-
-      play = False
-
-
-    quit = True
+      if "You die" in current_menu['message'] or "safe" in current_menu['message']:
+        print('\n', current_menu['message'], '\n', sep='')
+        play = False
+      else:
+        print('\n', current_menu['message'], sep='')
+        current_menu = get_choice(current_menu)
     
 
 

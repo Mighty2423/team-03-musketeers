@@ -1,48 +1,29 @@
 earthquake = {
   'Name': 'earthquake',
-  'At home': {'message': 'Earthquake Warning'},
-  'Earthquake Warning': {'message': 'Sirens and phone alerts'},
-  'Sirens and phone alerts': {'message': 'Take cover under a table ,desk, or other sturdy bolted furniture'},
-  'Take cover under a table ,desk, or other sturdy bolted furniture': {'message': 'Stay inside until the shaking stops and it is safe to exit'},
+  'At home': {'message': 'Sirens and phone alerts: \n\"Take cover under a table, desk, or other sturdy bolted furniture!\"'},
+  'Take cover under bolted furniture': {'message': 'Stay inside until the shaking stops and it is clear to exit'},
   
-  'Take cover under a table ,desk':{'message': 'you survive'},
-  'Take cover under a table ,desk':  {'message': 'house Collapse'},
-  'house Collapse': {'message': 'you die'},
-  
-  
-'Take cover clinging to the toilet':{'message': 'you survive'},
-'Take cover clinging to the toilet': {'message': 'house Collapse'},
-'house Collapse': {'message': 'you die'},
+  'Take cover under a table, desk': {'message': 'You survive. You are safe.'},
+  'Take cover clinging to the toilet': {'message': 'You survive the earthquake. You are safe.'},
 
-'Act quickly': {'message': 'runn outside and hug a tree'},
-'runn outside and hug a tree': {'message': 'you die'},
-'runn outside and hug a tree': {'message': 'you survive'},
+  'Run outside': {'message': 'You run outside and hug a tree. You die.'},
 
-'run away and drive away': {'message': 'car crash'},
-'car crash': {'message': 'you die'},
+  'Drive away': {'message': 'You try to drive away while the earth is rumbling. Your car crashes. You die.'},
 }
 
 
+#1
+earthquake['At home']['Take cover under bolted furniture'] = earthquake['Take cover under bolted furniture']
+  #2
+earthquake['Take cover under bolted furniture']['Take cover under a table, desk'] = earthquake['Take cover under a table, desk']
+  #2
+earthquake['Take cover under bolted furniture']['Take cover clinging to the toilet'] = earthquake['Take cover clinging to the toilet']
 
-earthquake['At home']['Earthquake Warning']=earthquake['Earthquake Warning']
-earthquake['Earthquake Warning']['Sirens and phone alerts']=earthquake=['Sirens and phone alerts']
-earthquake['Sirens and phone alerts']['Take cover under a table ,desk, or other sturdy bolted furniture']=earthquake=['Take cover under a table ,desk, or other sturdy bolted furniture']
-earthquake['Take cover under a table ,desk, or other sturdy bolted furniture']['Stay inside until the shaking stops and it is safe to exit']=earthquake=['Stay inside until the shaking stops and it is safe to exit']
+#1
+earthquake['At home']['Run outside'] = earthquake['Run outside']
 
-earthquake['Take cover under a table ,desk']['you survive']=earthquake=['you survive']
-earthquake['Take cover under a table ,desk']['house Collapse']=earthquake=['house Collapse']
-earthquake['house Collapse']['you die']=earthquake=['you die']
-
-earthquake['Take cover clinging to the toilet']['you survive']=earthquake=['you survive']
-earthquake['Take cover clinging to the toilet']['house Collapse']=earthquake=['house Collapse']
-earthquake['house Collapse']['you die']=earthquake=['you die']
-
-earthquake['Act quickly']['runn outside and hug a tree']=earthquake=['runn outside and hug a tree']
-earthquake['runn outside and hug a tree']['you die']=earthquake=['you die']
-earthquake['runn outside and hug a tree']['you survive']=earthquake=['you survive']
-
-earthquake['run away and drive away']['car crash']=earthquake=['car crash']
-earthquake['car crash']['you die']=earthquake=['you die']
+#1
+earthquake['At home']['Drive away'] = earthquake['Drive away']
 
 def get():
   return earthquake
