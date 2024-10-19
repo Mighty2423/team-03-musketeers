@@ -15,6 +15,7 @@ Freak disaters is a gamified disaster training that has been the purpose of givi
 Step-by-step instructions to get the project running locally.
 
 1. Clone the repository: `git clone git@github.com:Mighty2423/team-03-musketeers.git`
+2. 
 
 ## Usage
 Explain how to use the project, including any commands, configurations, or interface instructions.
@@ -40,37 +41,3 @@ A diagram or description of how the components interact.
 - Alton S. White V: Distaster Senario Writer/Sub-Programer
 - Case Montgomery: Cross Languae Communication Specalist
 - Leslie Jury: C/Circut Master
-
-
-
-
-
-# Heading 1
-## Subheading 1
-
-
-## Subheading 2
-
-
-## Subheading 3
-
-
-# Heading 2
-## Subheading 1
-
-
-## Subheading 2
-
-
-## Subheading 3
-
-
-# Heading 3
-## Subheading 1
-
-
-## Subheading 2
-
-
-## Subheading 3
-

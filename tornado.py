@@ -1,37 +1,29 @@
 tornado = {
-    'name': 'Tornado',
-    'At home': {'message': 'Tornado Warning'},
-    'Tornado Warning': {'message': 'Sirens and phone alerts'},
-    'Sirens and phone alerts': {'message': 'Take cover under a table ,desk, that is sturdy bolted furniture'},
-    'Take cover under a table ,desk, that is sturdy bolted furniture': {'message': 'Stay away from windows and doors'},
-    'Stay away from windows and doors': {'message': 'Stay in the shelter until the warning is over'},
+  'Name': 'tornado',
+  'At home': {'message': 'Sirens and phone alerts: \n\"Take cover under a table, desk, or other sturdy bolted furniture!\"'},
+  'Take cover under bolted furniture': {'message': 'Stay inside until the shaking stops and it is clear to exit'},
+  
+  'Take cover under a table, desk': {'message': 'You survive. You are safe.'},
+  'Take cover clinging to the toilet': {'message': 'You survive the tornado. You are safe.'},
 
-    'Take cover under a table ,desk': {'message': 'you survive'},
+  'Run outside': {'message': 'You run outside and hug a tree. You die.'},
 
-    'Act quickly': {'message': 'runn outside and hug a tree'},
-    'runn outside and hug a tree': {'message': 'you die after being hit by flying debris'},
-
-    'run away and drive away': {'message': 'Sucked into the tornado'},
-    'Sucked into the tornado': {'message': 'you die by flying debris'},
+  'Drive away': {'message': 'You try to drive away while the tornado is hitting. Your car crashes. You die.'},
 }
 
 
-tornado['At home'] = tornado['Tornado Warning']
-tornado['Sirens and phone alerts'] = tornado['Take cover under a table ,desk, that is sturdy bolted furniture']
-tornado['Take cover under a table ,desk, that is sturdy bolted furniture'] = tornado['Stay away from windows and doors']
-tornado['Stay away from windows and doors'] = tornado['Act quickly']
+#1
+tornado['At home']['Take cover under bolted furniture'] = tornado['Take cover under bolted furniture']
+  #2
+tornado['Take cover under bolted furniture']['Take cover under a table, desk'] = tornado['Take cover under a table, desk']
+  #2
+tornado['Take cover under bolted furniture']['Take cover clinging to the toilet'] = tornado['Take cover clinging to the toilet']
 
-tornado['Act quickly'] = tornado['Take cover under a table ,desk']
-tornado['Take cover under a table ,desk'] = tornado['you survive and safe']
+#1
+tornado['At home']['Run outside'] = tornado['Run outside']
 
+#1
+tornado['At home']['Drive away'] = tornado['Drive away']
 
-tornado['Act quickly'] = tornado['runn outside and hug a tree']
-tornado['Act quickly'] = tornado['run away and drive away']
-tornado['runn outside and hug a tree'] = tornado['you die after being hit by flying debris']
-
-
-
-
-
-def tornado():
-  return
+def get():
+  return tornado

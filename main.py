@@ -1,8 +1,8 @@
 import serial
-# import earthquake
-# import floods
-# import hurricane
-# import tornado
+import earthquake
+import floods
+import hurricane
+import tornado
 import wildfire
 
 # Utility function for viewing data
@@ -57,7 +57,7 @@ def get_choice(menu):
         return menu[menu_list[choice]]
     except Exception:
       print("Invalid choice", '\n')
-      prompt = "Please choose a valid option: "
+      prompt = "Please choose a valid option (e.g. 0 or 1): "
 
 def main_menu(disasters):
   prompt = "Choose your adventure: "
@@ -80,12 +80,12 @@ def main_menu(disasters):
         return choice
     except Exception:
       print("Invalid choice")
-      prompt = "Please choose a valid option: "
+      prompt = "Please choose a valid option (e.g. 0 or 1): "
 
 
 def main():
   # disasters = [earthquake, floods, hurricane, tornado, wildfire]
-  disasters = [wildfire]
+  disasters = [earthquake, floods,hurricane, tornado, wildfire]
 
   quit = False
   while(not quit):
@@ -105,7 +105,7 @@ def main():
         print('\n', current_menu['message'], '\n', sep='')
         play = False
       else:
-        print('\n', current_menu['message'])
+        print('\n', current_menu['message'], sep='')
         current_menu = get_choice(current_menu)
     
 
