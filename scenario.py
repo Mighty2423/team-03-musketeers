@@ -3,8 +3,8 @@ class Scenario:
     self.scenario = scenario
     self.messages = {
             'end': "Thank you for playing!",
-            'error': "Invalid response. Please try again.",
-            'call911': 'Call 911',
-           }
+            'error': "Invalid response. Please try again."}
+    
+    
     
     
