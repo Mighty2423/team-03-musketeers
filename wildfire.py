@@ -18,7 +18,7 @@ wildfire = {
         'Look for emergency personnel': {'message': "You start walking away and look for emergency personnel. You get lost and overtaken by the fire. You die."},
 
 
-        'In in a car': {'message': "You get in a car on and start driving down the road"},
+        'Get in a car': {'message': "You get in a car on and start driving down the road"},
         'Follow the evacuation': {'message': "You leave and follow the evacution of the neighborhood"},
         'Drive to nearest town': {'message': "You leave and drive to the nearest town. You make it to the town and are safe."},
         'Drive to nearest body of water': {'message': "You arrive at a body of water and get on a boat to middle of a lake."},
@@ -77,6 +77,3 @@ wildfire['At home'['Get close to water']] = wildfire['Get close to water']
 wildfire['Get close to water'['Pick people up in boat']] = wildfire['Pick people up in boat']
   #2
 wildfire['Get close to water'['Stay in the lake']] = wildfire['Stay in the lake']
-
-def Wildfire():
-  return wildfire
