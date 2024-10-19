@@ -35,11 +35,11 @@ A diagram or description of how the components interact.
 
 
 ## Team
-- team team-03-musketeers
-- Joe Olsen: software arcatect
-- Alton S. White V: distaster Senario writer/ sub-programer
-- Case Montgomery: cross languae communication specalist
-- Leslie Jury: C/ Circut  master
+- Team: team-03-musketeers
+- Joe Olsen: Software Architect
+- Alton S. White V: Distaster Senario Writer/Sub-Programer
+- Case Montgomery: Cross Languae Communication Specalist
+- Leslie Jury: C/Circut Master
 
 
 
