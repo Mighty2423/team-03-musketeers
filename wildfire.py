@@ -43,7 +43,7 @@ wildfire['Get in a car']['Drive to nearest body of water'] = wildfire['Drive to 
     #3
 wildfire['Drive to nearest body of water']['Pick people up in boat'] = wildfire['Pick people up in boat']
     #3
-wildfire['Drive to nearest body of water']['Stay in the lake'] = wildfire['Stay in the lake']
+wildfire['Drive to nearest body of water']['Stay in the lake You are safe.'] = wildfire['Stay in the lake You are safe.']
 
 
 #1
@@ -65,7 +65,7 @@ wildfire['At home']['Get close to water'] = wildfire['Get close to water']
   #2
 wildfire['Get close to water']['Pick people up in boat'] = wildfire['Pick people up in boat']
   #2
-wildfire['Get close to water']['Stay in the lake'] = wildfire['Stay in the lake']
+wildfire['Get close to water']['Stay in the lake You are safe.'] = wildfire['Stay in the lake You are safe.']
 
 def get():
   return wildfire
