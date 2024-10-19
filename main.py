@@ -1,4 +1,4 @@
-import serial
+from serialio import *
 import earthquake
 import floods
 import hurricane
@@ -38,7 +38,7 @@ def print_menu(menu_list):
     print(f"{i}: {menu_list[i]}")
 
 
-def get_choice(menu):
+def get_choice(menu, writer):
   menu_list = get_menu_list(menu.items())
 
   prompt = "Choose an option: "
@@ -46,7 +46,7 @@ def get_choice(menu):
   valid = False
   while(not valid):
     print_menu(menu_list)
-    choice = input(prompt)
+    choice = sync_with_external(len(menu_list), writer)
 
     try:
       choice = int(choice)
@@ -59,7 +59,7 @@ def get_choice(menu):
       print("Invalid choice", '\n')
       prompt = "Please choose a valid option (e.g. 0 or 1): "
 
-def main_menu(disasters):
+def main_menu(disasters, writer):
   prompt = "Choose your adventure: "
 
   valid = False
@@ -68,7 +68,7 @@ def main_menu(disasters):
         print(f"{i}: {disasters[i].__name__.capitalize()}")
     print(f"{len(disasters)}: Quit")
 
-    choice = input(prompt)
+    choice = sync_with_external(len(disasters), writer)
     print("\n", f"You chose {choice}", sep='')
 
     try:
@@ -83,15 +83,14 @@ def main_menu(disasters):
       prompt = "Please choose a valid option (e.g. 0 or 1): "
 
 
-def main():
-  # disasters = [earthquake, floods, hurricane, tornado, wildfire]
-  disasters = [earthquake, floods,hurricane, tornado, wildfire]
+async def main_(reader, writer):
+  disasters = [earthquake, floods, hurricane, tornado, wildfire]
 
   quit = False
   while(not quit):
     play = False
     
-    choice = main_menu(disasters)
+    choice = main_menu(disasters, writer)
 
     if choice == len(disasters):
       print('Thanks for playing! Stay safe!')
@@ -106,28 +105,12 @@ def main():
         play = False
       else:
         print('\n', current_menu['message'], sep='')
-        current_menu = get_choice(current_menu)
-    
+        current_menu = get_choice(current_menu, writer)
 
+async def main():
+  reader, writer = await serial_asyncio.open_serial_connection(url=serial_port, baudrate=baud_rate)
 
-# def main():
-
-#   # Open the serial port
-#   ser = serial.Serial('COM1', 9600)  # Replace 'COM1' with your port name and 9600 with the baud rate
-
-
-#   # Write data
-#   # ser.write(b'Hello from Python!\n')
-
-
-
-#   # Read data
-#   data = ser.readline()
-#   print(data.decode('utf-8'))
-
-#   # Close the port
-#   ser.close()
-
+  await asyncio.gather(serial_monitor(reader), main_(reader, writer))
 
 if __name__ == "__main__":
-  main()
+  asyncio.run(main())
