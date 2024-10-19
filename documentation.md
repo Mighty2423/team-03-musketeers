@@ -1,3 +1,33 @@
+# Freak disaters
+Masters is a gamified disaster training that has been the purpose of giving people opportunities to see what would happen if they're in a real world disaster scenario. Such as hurricanes, tornadoes, earthquakes, floods, and wildfires.
+
+## Table of Contents
+- [Overview](#overview)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Features](#features)
+- [Architecture](#architecture)
+- [API Documentation](#api-documentation)
+- [Team](#team)
+- [License](#license)
+
+## Setup
+Step-by-step instructions to get the project running locally.
+
+1. Clone the repository: `git clone git@github.com:Mighty2423/team-03-musketeers.git`
+
+
+
+8. ## Team
+- Joe Olsen: software arcatect
+- Alton S. White V: distaster Senario writer/ sub-programer
+- Case Montgomery: cross languae communication specalist
+- Leslie Jury: C/ Circut  master
+
+
+
+
+
 # Heading 1
 ## Subheading 1
 
