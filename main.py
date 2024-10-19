@@ -46,6 +46,7 @@ def get_choice(menu, writer):
   valid = False
   while(not valid):
     print_menu(menu_list)
+    print(prompt)
     choice = sync_with_external(len(menu_list), writer)
 
     try:
@@ -68,6 +69,7 @@ def main_menu(disasters, writer):
         print(f"{i}: {disasters[i].__name__.capitalize()}")
     print(f"{len(disasters)}: Quit")
 
+    print(prompt)
     choice = sync_with_external(len(disasters), writer)
     print("\n", f"You chose {choice}", sep='')
 
