@@ -14,9 +14,10 @@ def print_k_v(dictionary):
     else:
       print_k_v(v)
 
-
+# Needs work/to be integrated in place of input(prompt)
 def poll(serial_port, integer, prompt):
   print(prompt)
+
   serial_port.write(integer)
 
   choice = int(serial_port.read())
