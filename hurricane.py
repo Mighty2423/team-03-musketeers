@@ -1,39 +1,29 @@
 hurricane = {
-    "name": "Hurricane",
-    'At home': {'message': 'Hurricane Warning'},
-    'Hurricane Warning': {'message': 'Sirens and phone alerts'},
-    'Sirens and phone alerts': {'message': 'Take cover under a table ,desk, that is sturdy bolted furniture'},
-    'Take cover under a table ,desk, that is sturdy bolted furniture': {'message': 'Stay away from windows and doors'},
-    'Stay away from windows and doors': {'message': 'Waring for looters'},
-    'Waring for looters': {'message': 'stay away from damaged properties or face later consequences'},
+  'Name': 'hurricane',
+  'At home': {'message': 'Sirens and phone alerts: \n\"Take cover under a table, desk, or other sturdy bolted furniture!\"'},
+  'Take cover under bolted furniture': {'message': 'Stay inside until the shaking stops and it is clear to exit'},
+  
+  'Take cover under a table, desk': {'message': 'You survive. You are safe.'},
+  'Take cover clinging to the toilet': {'message': 'You survive the hurricane. You are safe.'},
 
-    'stay away from damaged properties or face later consequences': {'message' : 'take cover under a table ,desk'}, 
-    'Take cover under a table ,desk': {'message': 'you survive You are safe.'},
-    
-    'Act quickly': {'message': 'runn outside and hug a tree'},
-    'runn outside and hug a tree': {'message': 'you die after being hit by flying debris'},
+  'Run outside': {'message': 'You run outside and hug a tree. You die.'},
 
-    'run away and drive away': {'message': 'Sucked into the hurricane'},
-    'Sucked into the hurricane': {'message': 'you die by being hit by suffocation'},
-    }
+  'Drive away': {'message': 'You try to drive away while the hurricane is hitting. Your car crashes. You die.'},
+}
 
 
-hurricane['At home'] = hurricane['Hurricane Warning']
-hurricane['Hurricane Warning'] = hurricane['Sirens and phone alerts']
-hurricane['Sirens and phone alerts'] = hurricane['Take cover under a table ,desk, that is sturdy bolted furniture']
-hurricane['Take cover under a table ,desk, that is sturdy bolted furniture'] = hurricane['Stay away from windows and doors']
-hurricane['Stay away from windows and doors'] = hurricane['Waring for looters'] = hurricane['stay away from damaged properties']
+#1
+hurricane['At home']['Take cover under bolted furniture'] = hurricane['Take cover under bolted furniture']
+  #2
+hurricane['Take cover under bolted furniture']['Take cover under a table, desk'] = hurricane['Take cover under a table, desk']
+  #2
+hurricane['Take cover under bolted furniture']['Take cover clinging to the toilet'] = hurricane['Take cover clinging to the toilet']
 
+#1
+hurricane['At home']['Run outside'] = hurricane['Run outside']
 
-hurricane['stay away from damaged properties'] = hurricane['take cover under a table ,desk']
-hurricane['take cover under a table ,desk'] = hurricane['you survive You are safe.']
-
-hurricane['Act quickly'] = hurricane['runn outside and hug a tree']
-hurricane['runn outside and hug a tree'] = hurricane['you die after being hit by flying debris']
-
-hurricane['run away and drive away'] = hurricane['Sucked into the hurricane']
-hurricane['Sucked into the hurricane']= hurricane['you die by being hit by suffocation']
-
+#1
+hurricane['At home']['Drive away'] = hurricane['Drive away']
 
 def get():
   return hurricane
