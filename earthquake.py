@@ -1,7 +1,7 @@
-earthquakes = {
-  'Name': 'earthquakes',
-  'At home': {'message': 'Earthquakes Warning'},
-  'Earthquakes Warning': {'message': 'Sirens and phone alerts'},
+earthquake = {
+  'Name': 'earthquake',
+  'At home': {'message': 'Earthquake Warning'},
+  'Earthquake Warning': {'message': 'Sirens and phone alerts'},
   'Sirens and phone alerts': {'message': 'Take cover under a table ,desk, or other sturdy bolted furniture'},
   'Take cover under a table ,desk, or other sturdy bolted furniture': {'message': 'Stay inside until the shaking stops and it is safe to exit'},
   
@@ -24,26 +24,26 @@ earthquakes = {
 
 
 
-earthquakes['At home']['Earthquakes Warning']=earthquakes['Earthquakes Warning']
-earthquakes['Earthquakes Warning']['Sirens and phone alerts']=earthquakes=['Sirens and phone alerts']
-earthquakes['Sirens and phone alerts']['Take cover under a table ,desk, or other sturdy bolted furniture']=earthquakes=['Take cover under a table ,desk, or other sturdy bolted furniture']
-earthquakes['Take cover under a table ,desk, or other sturdy bolted furniture']['Stay inside until the shaking stops and it is safe to exit']=earthquakes=['Stay inside until the shaking stops and it is safe to exit']
+earthquake['At home']['Earthquake Warning']=earthquake['Earthquake Warning']
+earthquake['Earthquake Warning']['Sirens and phone alerts']=earthquake=['Sirens and phone alerts']
+earthquake['Sirens and phone alerts']['Take cover under a table ,desk, or other sturdy bolted furniture']=earthquake=['Take cover under a table ,desk, or other sturdy bolted furniture']
+earthquake['Take cover under a table ,desk, or other sturdy bolted furniture']['Stay inside until the shaking stops and it is safe to exit']=earthquake=['Stay inside until the shaking stops and it is safe to exit']
 
-earthquakes['Take cover under a table ,desk']['you survive']=earthquakes=['you survive']
-earthquakes['Take cover under a table ,desk']['house Collapse']=earthquakes=['house Collapse']
-earthquakes['house Collapse']['you die']=earthquakes=['you die']
+earthquake['Take cover under a table ,desk']['you survive']=earthquake=['you survive']
+earthquake['Take cover under a table ,desk']['house Collapse']=earthquake=['house Collapse']
+earthquake['house Collapse']['you die']=earthquake=['you die']
 
-earthquakes['Take cover clinging to the toilet']['you survive']=earthquakes=['you survive']
-earthquakes['Take cover clinging to the toilet']['house Collapse']=earthquakes=['house Collapse']
-earthquakes['house Collapse']['you die']=earthquakes=['you die']
+earthquake['Take cover clinging to the toilet']['you survive']=earthquake=['you survive']
+earthquake['Take cover clinging to the toilet']['house Collapse']=earthquake=['house Collapse']
+earthquake['house Collapse']['you die']=earthquake=['you die']
 
-earthquakes['Act quickly']['runn outside and hug a tree']=earthquakes=['runn outside and hug a tree']
-earthquakes['runn outside and hug a tree']['you die']=earthquakes=['you die']
-earthquakes['runn outside and hug a tree']['you survive']=earthquakes=['you survive']
+earthquake['Act quickly']['runn outside and hug a tree']=earthquake=['runn outside and hug a tree']
+earthquake['runn outside and hug a tree']['you die']=earthquake=['you die']
+earthquake['runn outside and hug a tree']['you survive']=earthquake=['you survive']
 
-earthquakes['run away and drive away']['car crash']=earthquakes=['car crash']
-earthquakes['car crash']['you die']=earthquakes=['you die']
+earthquake['run away and drive away']['car crash']=earthquake=['car crash']
+earthquake['car crash']['you die']=earthquake=['you die']
 
 def get():
-  return earthquakes
+  return earthquake
 
