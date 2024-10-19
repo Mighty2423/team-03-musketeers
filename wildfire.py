@@ -8,6 +8,7 @@ wildfire = {
         'cliff Side': ['Jump to the bottom','keep follon within edge until you find a lower area','start walking towards the forest.'],
         'on the road': ['turn aaround back to the other town', 'head down to find any one needing a ride','','' ],
         'by train tracks': ['follow your way back to home' ,'follow the way back to town','go in to the forest'],
-        'in a cornfield': ['get out to the road and start funning back','found a shovel and start digging a line',''],
+        'in a cornfield': ['get out to the road and start funning back','found a shovel and start digging a line','stay in the field and wait for help'],
+        
 }
 
