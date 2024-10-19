@@ -27,10 +27,11 @@ Explain how to use the project, including any commands, configurations, or inter
 A diagram or description of how the components interact.
 
 ## API Documentation
-### Endpoint 1: `/api/resource`
-- **Method**: GET
-- **Description**: Fetches all resources.
-- **Response**: JSON format.
+## System Architecture
+1. **API Layer (Python)**: Handles the API requests and sends commands/data to the hardware.
+2. **Serial Communication**: Transmits data between the Python script and the hardware.
+3. **Hardware Control (C)**: A C program running on the hardware processes the commands received via the serial interface.
+
 
 
 ## Team
